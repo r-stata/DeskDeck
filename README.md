@@ -1,5 +1,7 @@
 <div align="center">
+<p align="center">
   <img src="docs/screenshots/appicon.png" width="96" alt="DeskDeck 图标" />
+</p>
   <h1>DeskDeck：Mac 的桌面管理大师～</h1>
   <p><strong>把桌面变成一叠可以随手翻动的玻璃卡片</strong></p>
   <p>应用 / 文档 / 函数三类分区 · 液态玻璃质感 · 参数填好点「提交」，就地跑 R 与 Python</p>
@@ -24,7 +26,9 @@
 
 DeskDeck 是一个 macOS 桌面分区工具：在桌面层放几张「液态玻璃」卡片，把 App 收进应用分区、把文件收进文档分区、把常用的 R / Python 脚本做成一张函数卡片，参数填好点「提交」直接跑。卡片可以任意摆放、拖动、缩放、锁定、换色，还可以在卡片上养一只小宠物。
 
-![DeskDeck 概览](docs/screenshots/01-overview.png)
+<p align="center">
+  <img src="docs/screenshots/01-overview.png" width="900" alt="DeskDeck 概览">
+</p>
 
 - 原生 SwiftUI + AppKit，macOS 14+；macOS 26 上使用系统原生 Liquid Glass（`glassEffect`），旧系统用壁纸模糊 + 自绘高光近似
 - 纯菜单栏应用（`LSUIElement`），不占 Dock，桌面右上角没有任何常驻悬浮按钮
@@ -47,7 +51,9 @@ DeskDeck 是一个 macOS 桌面分区工具：在桌面层放几张「液态玻�
 
 把常用 App 收进一张卡片，图标来自 App 自己的 icon，单击即启动。
 
-<img src="docs/screenshots/02-apps.png" width="440" alt="应用分区">
+<p align="center">
+  <img src="docs/screenshots/02-apps.png" width="440" alt="应用分区">
+</p>
 
 - 从访达把 `.app` 拖进卡片，或点标题栏的 `＋` 面板挑选
 - 单击图标直接打开；右键可「在访达中显示」「从分区移除」
@@ -57,7 +63,9 @@ DeskDeck 是一个 macOS 桌面分区工具：在桌面层放几张「液态玻�
 
 绑定一个真实文件夹，卡片就是那个文件夹的「镜像」。
 
-<img src="docs/screenshots/03-folder.png" width="440" alt="文档分区">
+<p align="center">
+  <img src="docs/screenshots/03-folder.png" width="440" alt="文档分区">
+</p>
 
 - **拖进来** = 文件被移动到绑定文件夹，卡片随文件夹内容实时刷新（`DispatchSource` 监听）
 - **拖出去** = 从绑定文件夹移走，直接拖到桌面或任意访达窗口即可；**卡片锁定的时候也能拖出去**，锁定只锁卡片的移动和缩放
@@ -68,18 +76,24 @@ DeskDeck 是一个 macOS 桌面分区工具：在桌面层放几张「液态玻�
 
 把一段分析脚本做成卡片：卡片上只留参数输入框和「提交」，剩下的配置都在设置窗口里。
 
-<img src="docs/screenshots/05-function-card.png" width="440" alt="函数分区">
+<p align="center">
+  <img src="docs/screenshots/05-function-card.png" width="440" alt="函数分区">
+</p>
 
 - **签名反射**：设置里填函数名 → 点「读取参数」，R 用 `formals()`、Python 用 `inspect.signature` 把参数名、默认值、类型一次读出来，自动生成参数表
 - **参数可以手工改**：参数名、类型（文本 / 数值 / 开关 / 下拉 / R 表达式）、默认值都能编辑，也能自己加参数、删参数
 - **不常用的参数可以隐藏**：每行左边的眼睛图标控制这个参数是否出现在卡片上；隐藏的参数不占卡片位置，但调用时照样按设置里的值传进去
 - **提交即运行**：运行结果不再是弹窗打断你，卡片标题栏直接出现 **绿色对勾 / 红色叉号**；点这个图标才打开「运行日志」
 
-<img src="docs/screenshots/06-settings-r.png" width="660" alt="R 函数设置">
+<p align="center">
+  <img src="docs/screenshots/06-settings-r.png" width="660" alt="R 函数设置">
+</p>
 
 设置窗口里能改：卡片名称、语言（R / Python）、环境探测与手动指定解释器、函数名、预先 source 的脚本、默认工作目录、参数表（含隐藏开关）。顶部会显示检测到的 `Rscript` / `python3` 路径与版本。
 
-<img src="docs/screenshots/07-settings-python.png" width="660" alt="Python 函数设置">
+<p align="center">
+  <img src="docs/screenshots/07-settings-python.png" width="660" alt="Python 函数设置">
+</p>
 
 Python 与 R 共用同一套卡片和参数表，只是设置里切到 Python：
 
@@ -87,7 +101,9 @@ Python 与 R 共用同一套卡片和参数表，只是设置里切到 Python：
 - 「预先加载的脚本」会 `exec` 进同一个命名空间，支持 `函数名` 或 `模块名.函数名`
 - 运行时 `os.chdir(工作目录) → exec 脚本 → 调用 → print 结果`
 
-<img src="docs/screenshots/08-run-log.png" width="660" alt="运行日志">
+<p align="center">
+  <img src="docs/screenshots/08-run-log.png" width="660" alt="运行日志">
+</p>
 
 「运行日志」窗口给出状态、耗时、标准输出，并提供「打开工作目录」「复制输出」「关闭」。R 端每次运行的返回值还会另存一份 `RDS` 到临时目录，方便在别处接着用。
 
@@ -95,7 +111,9 @@ Python 与 R 共用同一套卡片和参数表，只是设置里切到 Python：
 
 任何卡片都能放一个贴图宠物：右上角「⋯」菜单 → **添加小宠物图标…**，支持 **SVG / PNG / GIF / JPG / HEIC**（SVG 由系统直接渲染，透明背景保留；系统读不出来时会自动用 QuickLook 转一张 PNG 缓存起来，下次直接命中；GIF 会动）。
 
-<img src="docs/screenshots/04-mascot.png" width="440" alt="卡片上的小宠物">
+<p align="center">
+  <img src="docs/screenshots/04-mascot.png" width="440" alt="卡片上的小宠物">
+</p>
 
 - **拖动**：取消「固定」后按住宠物就能在卡片内任意挪动，松手位置记住；挪的时候不会带动整张卡片
 - **缩放**：指针停在宠物上滚轮 / 触控板上下滑即可连续缩放；菜单里也有 32 / 48 / 64 / 96 / 140 pt 预设
@@ -106,7 +124,9 @@ Python 与 R 共用同一套卡片和参数表，只是设置里切到 Python：
 
 九种颜色，每一格都是按卡片真实的液态玻璃质感渲染的预览，点一下就即时生效。
 
-<img src="docs/screenshots/09-colors.png" width="520" alt="卡片颜色">
+<p align="center">
+  <img src="docs/screenshots/09-colors.png" width="520" alt="卡片颜色">
+</p>
 
 蓝色 `#0A84FF` · 靛蓝 `#5E5CE6` · 紫色 `#BF5AF2` · 玫红 `#FF375F` · 橙色 `#FF9F0A` · 黄色 `#FFD60A` · 绿色 `#30D158` · 青色 `#64D2FF` · 浅灰 `#E8E8ED`
 

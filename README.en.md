@@ -1,5 +1,7 @@
 <div align="center">
+<p align="center">
   <img src="docs/screenshots/appicon.png" width="96" alt="DeskDeck icon" />
+</p>
   <h1>DeskDeck — a desktop manager for Mac</h1>
   <p><strong>Turn your desktop into a deck of glass cards you can shuffle around</strong></p>
   <p>Apps / Documents / Functions partitions · liquid-glass look · fill in the params, hit Submit, run R and Python right there</p>
@@ -24,7 +26,9 @@
 
 DeskDeck is a desktop partition tool for macOS. It puts a few “liquid glass” cards on the desktop layer: collect your apps into an apps partition, files and folders into a documents partition, and turn a treasured R / Python script into a function card — fill in the parameters, hit **Submit**, and it runs. Cards can be moved freely, dragged, resized, locked and recoloured, and each card can host a little mascot.
 
-![DeskDeck overview](docs/screenshots/01-overview.png)
+<p align="center">
+  <img src="docs/screenshots/01-overview.png" width="900" alt="DeskDeck overview">
+</p>
 
 - Native SwiftUI + AppKit, macOS 14+. On macOS 26 it uses the system Liquid Glass (`glassEffect`); on older systems it approximates it with wallpaper blur plus hand-drawn highlights
 - Menu-bar-only app (`LSUIElement`): no Dock icon, no floating button parked in the top-right corner
@@ -47,7 +51,9 @@ The project started out as “桌面管理大师” (Desktop Management Master) 
 
 Collect frequently used apps into one card. Icons are taken from the apps themselves; a single click launches.
 
-<img src="docs/screenshots/02-apps.png" width="440" alt="Apps partition">
+<p align="center">
+  <img src="docs/screenshots/02-apps.png" width="440" alt="Apps partition">
+</p>
 
 - Drag a `.app` in from Finder, or pick one from the `＋` panel in the title bar
 - Single click opens the app; right-click offers “Reveal in Finder” and “Remove from partition”
@@ -57,7 +63,9 @@ Collect frequently used apps into one card. Icons are taken from the apps themse
 
 Binds to a real folder; the card is a mirror of that folder.
 
-<img src="docs/screenshots/03-folder.png" width="440" alt="Documents partition">
+<p align="center">
+  <img src="docs/screenshots/03-folder.png" width="440" alt="Documents partition">
+</p>
 
 - **Drag in** = the file is moved into the bound folder, and the card refreshes live (`DispatchSource` watches the directory)
 - **Drag out** = the file leaves the bound folder; drop it on the desktop or into any Finder window. **This works while the card is locked** — locking only freezes card movement and resizing
@@ -68,18 +76,24 @@ Binds to a real folder; the card is a mirror of that folder.
 
 Turn an analysis script into a card: the card itself only shows parameter fields and a **Submit** button — everything else is configured in the settings window.
 
-<img src="docs/screenshots/05-function-card.png" width="440" alt="Functions partition">
+<p align="center">
+  <img src="docs/screenshots/05-function-card.png" width="440" alt="Functions partition">
+</p>
 
 - **Signature reflection**: type the function name in settings and hit “Read parameters”. R uses `formals()`, Python uses `inspect.signature`; parameter names, defaults and types are read in one go and turned into a parameter table
 - **Parameters stay editable**: name, type (text / number / switch / dropdown / R expression) and default value can all be edited, and parameters can be added or removed
 - **Rarely used parameters can be hidden**: the eye icon on each row controls whether that parameter appears on the card. Hidden parameters take no card space but are still passed at call time with their configured value
 - **Submit runs it**: results no longer interrupt you with a dialog — a **green check / red cross** appears in the card's title bar. Click that icon to open the run log
 
-<img src="docs/screenshots/06-settings-r.png" width="660" alt="R function settings">
+<p align="center">
+  <img src="docs/screenshots/06-settings-r.png" width="660" alt="R function settings">
+</p>
 
 The settings window covers card name, language (R / Python), interpreter detection or manual path, function name, scripts to source up front, default working directory and the parameter table (including the hide switches). The detected `Rscript` / `python3` path and version are shown at the top.
 
-<img src="docs/screenshots/07-settings-python.png" width="660" alt="Python function settings">
+<p align="center">
+  <img src="docs/screenshots/07-settings-python.png" width="660" alt="Python function settings">
+</p>
 
 Python and R share the same card and parameter table; only the settings differ:
 
@@ -87,7 +101,9 @@ Python and R share the same card and parameter table; only the settings differ:
 - “Scripts to load first” are `exec`ed into the same namespace and support `function_name` or `module.function_name`
 - At run time: `os.chdir(working directory) → exec scripts → call → print the result`
 
-<img src="docs/screenshots/08-run-log.png" width="660" alt="Run log">
+<p align="center">
+  <img src="docs/screenshots/08-run-log.png" width="660" alt="Run log">
+</p>
 
 The run log window reports status, elapsed time and standard output, and offers “Open working directory”, “Copy output” and “Close”. Each R run also writes its return value to an `RDS` file in a temp directory so you can carry on elsewhere.
 
@@ -95,7 +111,9 @@ The run log window reports status, elapsed time and standard output, and offers 
 
 Any card can host a sticker pet: `⋯` menu in the title bar → **Add mascot…**. Supports **SVG / PNG / GIF / JPG / HEIC** (SVG is rendered by the system with transparency preserved; when the system cannot decode a file the app rasterises it once with QuickLook and caches the PNG; GIFs animate).
 
-<img src="docs/screenshots/04-mascot.png" width="440" alt="A mascot on a card">
+<p align="center">
+  <img src="docs/screenshots/04-mascot.png" width="440" alt="A mascot on a card">
+</p>
 
 - **Drag**: with “Pin position” off, hold the mascot and move it anywhere inside the card; the position is remembered. Dragging the mascot does not drag the card
 - **Resize**: hover over the mascot and scroll (mouse wheel or trackpad) to scale continuously; the menu also offers 32 / 48 / 64 / 96 / 140 pt presets
@@ -106,7 +124,9 @@ Any card can host a sticker pet: `⋯` menu in the title bar → **Add mascot…
 
 Nine colours. Every swatch is a preview rendered with the card's real liquid-glass material, and a click applies it instantly.
 
-<img src="docs/screenshots/09-colors.png" width="520" alt="Card colours">
+<p align="center">
+  <img src="docs/screenshots/09-colors.png" width="520" alt="Card colours">
+</p>
 
 Blue `#0A84FF` · Indigo `#5E5CE6` · Purple `#BF5AF2` · Pink `#FF375F` · Orange `#FF9F0A` · Yellow `#FFD60A` · Green `#30D158` · Cyan `#64D2FF` · Light grey `#E8E8ED`
 
