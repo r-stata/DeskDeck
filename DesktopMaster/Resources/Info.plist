@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>zh_CN</string>
+    <key>CFBundleExecutable</key>
+    <string>DeskDeck</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.ac.deskdeck</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>DeskDeck</string>
+    <key>CFBundleDisplayName</key>
+    <string>DeskDeck</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.productivity</string>
+    <key>NSDesktopFolderUsageDescription</key>
+    <string>需要访问桌面，以便读取你拖入分区的文件图标。</string>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>需要访问你的文件，以便在分区中显示图标并打开。</string>
+    <key>NSDownloadsFolderUsageDescription</key>
+    <string>需要访问下载目录中的文件，以便加入分区。</string>
+    <key>NSRemovableVolumesUsageDescription</key>
+    <string>需要访问外接磁盘上的文件，以便加入分区。</string>
+</dict>
+</plist>
